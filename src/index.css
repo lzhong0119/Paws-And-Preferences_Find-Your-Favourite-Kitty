@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'Agirlsty';
+  src: url('/fonts/agirlsty.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-bg: #FCF9F2; /* Calm, clean light cream */
+  --color-text: #4A4036; /* Soft espresso brown for text */
+  --color-accent: #E8AA8C; /* Clean pastel peach / coral */
+  --color-card-bg: #FFFFFF;
+  --color-like: #7FD1AE; /* Soft green */
+  --color-dislike: #E58A8A; /* Soft red */
+  
+  --shadow-sm: 0 4px 12px rgba(74, 64, 54, 0.05);
+  --shadow-lg: 0 12px 32px rgba(74, 64, 54, 0.08);
+  --shadow-xl: 0 24px 48px rgba(74, 64, 54, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-font {
+  font-family: 'Agirlsty', cursive;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden; /* Prevent scrolling during swipe */
+  touch-action: none; /* Better touch handling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn-glass:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.music-btn:hover {
+  transform: none;
+}
+
+.btn-glass:active {
+  transform: translateY(0) scale(0.95);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.spinner {
+  border: 3px solid rgba(232, 170, 140, 0.3);
+  border-top: 3px solid var(--color-accent);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Custom scrollbar for summary screen */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 64, 54, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 64, 54, 0.4);
+}
