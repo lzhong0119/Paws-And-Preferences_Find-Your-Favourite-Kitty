@@ -280,7 +280,7 @@ export default function App() {
         ref={audioRef}
         loop
         id="bg-music"
-        src="/audio/Song.mp3"
+        src={`${import.meta.env.BASE_URL}audio/Song.mp3`}
         onTimeUpdate={(e) => {
           const current = e.target.currentTime;
           const dur = e.target.duration && !isNaN(e.target.duration) ? e.target.duration : 77;
@@ -446,8 +446,8 @@ export default function App() {
         <div style={{
           display: 'flex',
           gap: '32px',
-          marginTop: '40px',
-          paddingBottom: '40px',
+          marginTop: '24px',
+          paddingBottom: '80px',
           zIndex: 100
         }}>
           <button
